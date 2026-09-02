@@ -1,7 +1,14 @@
 [package]
 name = "cbk"
+description = "A generic, async implementation of the observer pattern"
 version = "0.1.0"
 edition = "2024"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+authors = ["Griffin O'Neill <gsoneill1003@gmail.com>"]
+keywords = ["observable", "async", "listener", "callback"]
+homepage = "https://github.com/Eolu/cbk"
+repository = "https://github.com/Eolu/cbk"
 
 [dependencies]
 futures = "0.3.34"
