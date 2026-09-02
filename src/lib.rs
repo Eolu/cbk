@@ -140,9 +140,8 @@ impl<'h, T: 'h> Observable<'h, T> {
 
     /// Invoke every registered handler with `arg`, driving each returned future
     /// to completion on the current thread.
-    pub fn call(&self, arg: &'h T) {
-        let futures = self.handlers.iter().map(|h| h.call(arg));
-        futures::executor::block_on(futures::future::join_all(futures));
+    pub async fn call(&self, arg: &'h T) {
+        futures::future::join_all(self.handlers.iter().map(|h| h.call(arg))).await;
     }
 }
 
