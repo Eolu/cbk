@@ -25,7 +25,7 @@ async fn example() {
         println!("Async closures work too: {something:?}")
     });
     observable.register(|something: &ExampleType| async {
-        println!("So do sync closure sthat return a future: {something:?}")
+        println!("So do sync closures that return a future: {something:?}")
     });
 
     // ... assume `observable` has been moved around arbitrarily in code
